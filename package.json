@@ -1,0 +1,15 @@
+{
+  "name": "query",
+  "version": "1.0.0",
+  "description": "Parses query string parameters",
+  "main": "./build/index.js",
+  "scripts": {
+    "build": "babel src -d build"
+  },
+  "author": "Max Harley <maxh@maxh.io> (maxh.io)",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1"
+  }
+}
