@@ -16,7 +16,9 @@ var parse = exports.parse = function parse(search) {
 };
 
 var build = exports.build = function build(object) {
-  return "?" + Object.keys(object).map(function (k) {
+  return "?" + Object.keys(object).filter(function (k) {
+    return k !== '' && k !== null;
+  }).map(function (k) {
     return k + "=" + object[k];
   }).join("&");
 };

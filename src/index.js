@@ -12,5 +12,6 @@ export const build = object =>
   "?" + 
   Object
   .keys(object)
+  .filter(k => k !== '' && k !== null)
   .map(k => `${k}=${object[k]}`)
   .join("&")
