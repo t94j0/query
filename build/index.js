@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var parse = function parse(search) {
+var parse = exports.parse = function parse(search) {
   return search.slice(1).split("&").map(function (param) {
     var pair = param.split("=");
     return _defineProperty({}, pair[0], pair[1]);
@@ -15,4 +15,8 @@ var parse = function parse(search) {
   });
 };
 
-exports.default = parse;
+var build = exports.build = function build(object) {
+  return "?" + Object.keys(object).map(function (k) {
+    return k + "=" + object[k];
+  }).join("&");
+};

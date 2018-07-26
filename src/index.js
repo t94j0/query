@@ -1,4 +1,4 @@
-const parse = search =>
+export const parse = search =>
   search
   .slice(1)
   .split("&")
@@ -8,5 +8,9 @@ const parse = search =>
   })
   .reduce((param, pair) => Object.assign({}, param, pair));
 
-
-export default parse;
+export const build = object =>
+  "?" + 
+  Object
+  .keys(object)
+  .map(k => `${k}=${object[k]}`)
+  .join("&")
